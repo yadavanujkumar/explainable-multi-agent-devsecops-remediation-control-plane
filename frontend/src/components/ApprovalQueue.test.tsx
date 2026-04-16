@@ -8,4 +8,14 @@ describe('ApprovalQueue Component', () => {
     render(<ApprovalQueue />);
     expect(screen.getByText(/Loading.../i)).toBeDefined();
   });
+
+  it('renders status filter dropdown', () => {
+    render(<ApprovalQueue />);
+    expect(screen.getByLabelText(/filter by status/i)).toBeDefined();
+  });
+
+  it('renders severity filter dropdown', () => {
+    render(<ApprovalQueue />);
+    expect(screen.getByLabelText(/filter by severity/i)).toBeDefined();
+  });
 });
