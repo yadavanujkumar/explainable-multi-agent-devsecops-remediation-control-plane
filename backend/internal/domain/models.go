@@ -13,11 +13,13 @@ type TelemetryEvent struct {
 
 // Remediation represents a detected vulnerability and its proposed patch.
 type Remediation struct {
-	ID             string    `json:"id"`
-	EventID        string    `json:"event_id"`
-	Vulnerability  string    `json:"vulnerability"`
-	ProposedPatch  string    `json:"proposed_patch"`
-	XAIExplanation string    `json:"xai_explanation"`
-	Status         string    `json:"status"` // pending, approved, rejected
-	CreatedAt      time.Time `json:"created_at"`
+	ID              string    `json:"id"`
+	EventID         string    `json:"event_id"`
+	Vulnerability   string    `json:"vulnerability"`
+	Severity        string    `json:"severity"` // critical, high, medium, low
+	ConfidenceScore float64   `json:"confidence_score"`
+	ProposedPatch   string    `json:"proposed_patch"`
+	XAIExplanation  string    `json:"xai_explanation"`
+	Status          string    `json:"status"` // pending, approved, rejected
+	CreatedAt       time.Time `json:"created_at"`
 }
